@@ -36,6 +36,11 @@
 
 [ААП 03](https://github.com/BSU2013gr04Lego/Workflow/releases/download/task03/OOPlb03.pdf)
 
+### Ідэі і заданні для бонусаў
+
+[На стэкі і чэргі для першага курса](https://github.com/BSU2013gr04Lego/Workflow/releases/download/%D0%B1%D0%BE%D0%BD%D1%83%D1%81%D1%8B/StekiCxerhi.pdf)
+[На абходы графаў](https://github.com/BSU2013gr04Lego/Workflow/releases/download/%D0%B1%D0%BE%D0%BD%D1%83%D1%81%D1%8B/Obvhody1grup.pdf)
 
 ## Метадычкі
 [Малая метадычка па гіту](https://github.com/BSU2013gr4Lego/Example/releases/download/gitPdf/AboutGit.pdf)
+[Крыху пра сартыроўкі](https://github.com/BSU2013gr04Lego/Workflow/releases/download/%D0%B1%D0%BE%D0%BD%D1%83%D1%81%D1%8B/KSR_SortMasEd1.pdf)
