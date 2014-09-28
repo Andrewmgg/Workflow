@@ -34,7 +34,7 @@
 
 ## Заданні
 
-[ААП 03]()
+[ААП 03](https://github.com/BSU2013gr04Lego/Workflow/releases/download/task03/OOPlb03.pdf)
 
 
 ## Метадычкі
