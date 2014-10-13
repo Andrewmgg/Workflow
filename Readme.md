@@ -35,6 +35,7 @@
 ## Заданні
 
 [ААП 03](https://github.com/BSU2013gr04Lego/Workflow/releases/download/task03/OOPlb03.pdf)
+[ААП 04](https://github.com/BSU2013gr04Lego/Workflow/releases/download/OOP04/OOPlb04.pdf)
 
 ### Ідэі і заданні для бонусаў
 
