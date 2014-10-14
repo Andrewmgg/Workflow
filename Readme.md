@@ -35,7 +35,12 @@
 ## Заданні
 
 [ААП 03](https://github.com/BSU2013gr04Lego/Workflow/releases/download/task03/OOPlb03.pdf)
+
 [ААП 04](https://github.com/BSU2013gr04Lego/Workflow/releases/download/OOP04/OOPlb04.pdf)
+
+![Дыаграма класаў для лабраторнай 04](https://github.com/BSU2013gr04Lego/Workflow/blob/master/pimplNVI.svg)
+
+Клас ASD (абстрактная структура дадзеных, у кагосці гэта стэй, у кагосці дрэва, у кагосці, што іншае)
 
 ### Ідэі і заданні для бонусаў
 
