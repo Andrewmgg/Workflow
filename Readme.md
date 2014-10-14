@@ -38,7 +38,7 @@
 
 [ААП 04](https://github.com/BSU2013gr04Lego/Workflow/releases/download/OOP04/OOPlb04.pdf)
 
-![Дыаграма класаў для лабраторнай 04](https://github.com/BSU2013gr04Lego/Workflow/blob/master/pimplNVI.svg)
+![Дыаграма класаў для лабраторнай 04](https://raw.githubusercontent.com/BSU2013gr04Lego/Workflow/master/pimplNVI.png)
 
 Клас ASD (абстрактная структура дадзеных, у кагосці гэта стэй, у кагосці дрэва, у кагосці, што іншае)
 
