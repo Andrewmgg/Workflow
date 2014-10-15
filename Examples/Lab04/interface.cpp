@@ -7,7 +7,9 @@ using namespace std;
 
 EightLike::EightLike()noexcept:
 	pimpl(nullptr)
-{}
+{
+    pimpl = new Implementation();
+}
 
 EightLike::EightLike(const EightLike &other):
 	pimpl(nullptr)
