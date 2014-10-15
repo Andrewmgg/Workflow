@@ -20,7 +20,7 @@ public:
 	//interface
 	void output()const;
 private:
-	virtual void printElements(PositionedData *array, int size)const;
+   virtual void printElements(PositionedData * array, int size)const;
 };
 
 //}//namespace esl

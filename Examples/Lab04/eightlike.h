@@ -7,45 +7,45 @@ typedef int Data;
 
 struct PositionedData // helper struct for getElements method
 {
-	Data datum;
-	enum Position{head, left, right} position;
+    Data datum;
+    enum Position {head, left, right} position;
 };
 
 class EightLike
 {
-public:
-	// Great 6
-	EightLike()noexcept;
-	EightLike(const EightLike &other);
-	EightLike(EightLike &&other)noexcept;
-	EightLike &operator=(const EightLike &other);
-	EightLike &operator=(EightLike &&other)noexcept;
-	~EightLike() noexcept;
+    public:
+        // Great 6
+        EightLike()noexcept;
+        EightLike(const EightLike &other);
+        EightLike(EightLike &&other)noexcept;
+        EightLike &operator=(const EightLike &other);
+        EightLike &operator=(EightLike && other)noexcept;
+        ~EightLike() noexcept;
 
-	//accessors
-	Data onHead()const;
-	Data onNextLeft()const;
-	Data onPreviousLeft()const;
-	Data onNextRight()const;
-	Data onPreviousRight()const;
+        //accessors
+        Data onHead()const;
+        Data onNextLeft()const;
+        Data onPreviousLeft()const;
+        Data onNextRight()const;
+        Data onPreviousRight()const;
 
-	//predicates
-	bool isEmpty()const;
+        //predicates
+        bool isEmpty()const;
 
-	//modificators
-	void pushLeft(Data datum);
-	void pushRight(Data datum);
-	void popLeft()noexcept;
-	void popRight()noexcept;
-	void moveForward()noexcept;
-	void moveBackward()noexcept;
-	void clear()noexcept;
-protected:
-	/// return EightLike as linear array, previously left, than head, then right;
-	void getElements(PositionedData *&array, int &size)const;
-private:
-	class Implementation;
-	Implementation *pimpl;
+        //modificators
+        void pushLeft(Data datum);
+        void pushRight(Data datum);
+        void popLeft()noexcept;
+        void popRight()noexcept;
+        void moveForward()noexcept;
+        void moveBackward()noexcept;
+        void clear()noexcept;
+    protected:
+        /// return EightLike as linear array, previously left, than head, then right;
+        void getElements(PositionedData *&array, int &size)const;
+    private:
+        class Implementation;
+        Implementation *pimpl;
 };
 
 //}//namespace els
