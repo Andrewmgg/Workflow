@@ -1,7 +1,7 @@
 #ifndef EIGHTLIKE_H
 #define EIGHTLIKE_H
 
-namespace els{ // eight like space
+//namespace els{ // eight like space
 
 typedef int Data;
 
@@ -41,7 +41,10 @@ protected:
 	/// return EightLike as linear array, previously left, than head, then right;
 	void getElements(PositionedData *&array, int &size)const;
 private:
-	class Implementation *pimpl;
+	class Implementation;
+	Implementation *pimpl;
 };
+
+//}//namespace els
 
 #endif // EIGHTLIKE_H

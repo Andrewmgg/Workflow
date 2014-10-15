@@ -3,8 +3,8 @@
 
 #include "eightlike.h"
 
-namespace esl
-{
+//namespace esl
+//{
 
 class ConsoleEightLike: public EightLike
 {
@@ -23,6 +23,6 @@ private:
 	virtual void printElements(PositionedData *array, int size)const;
 };
 
-}//namespace esl
+//}//namespace esl
 
 #endif //CONSOLEEIGHTLIKE_H

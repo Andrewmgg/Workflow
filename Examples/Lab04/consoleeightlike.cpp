@@ -3,8 +3,8 @@
 
 using namespace std;
 
-namespace esl
-{
+//namespace esl
+//{
 
 ConsoleEightLike::ConsoleEightLike()noexcept:
 	EightLike()
@@ -18,12 +18,12 @@ ConsoleEightLike::ConsoleEightLike(ConsoleEightLike &&other)noexcept:
 	EightLike(other)
 {}
 
-ConsoleEightLike::ConsoleEightLike &operator=(const ConsoleEightLike &other):
+ConsoleEightLike &ConsoleEightLike::operator=(const ConsoleEightLike &other)
 {
 	return *this;
 }
 
-ConsoleEightLike::ConsoleEightLike &operator=(ConsoleEightLike &&other)noexcept
+ConsoleEightLike &ConsoleEightLike::operator=(ConsoleEightLike &&other)noexcept
 {
 	return *this;
 }
@@ -47,12 +47,12 @@ void ConsoleEightLike::printElements(PositionedData *array, int size)const
 	for(int i = 0; i < size; ++i)
 	{
 		if(array[i].position == PositionedData::head)
-			cout << "(" << array[i]<< ")";
+			cout << "(" << array[i].datum << ")";
 		else
-			cout << array[i];
+			cout << array[i].datum;
 		cout << " ";
 	}
 	cout << endl;
 }
 
-}//namespace esl
+//}//namespace esl

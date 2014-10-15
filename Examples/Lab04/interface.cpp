@@ -1,6 +1,6 @@
 #include "eightlike.h"
 
-namespace els{
+//namespace els{
 
 EightLike::EightLike()noexcept:
 	pimpl(nullptr)
@@ -18,13 +18,13 @@ EightLike::EightLike(EightLike &&other)noexcept:
 	//TODO
 }
 
-EightLike::EightLike &operator=(const EightLike &other):
+EightLike &EightLike::operator=(const EightLike &other)
 {
 	//TODO
 	return *this;
 }
 
-EightLike::EightLike &operator=(EightLike &&other)noexcept:
+EightLike &EightLike::operator=(EightLike &&other)noexcept
 {
 	//TODO
 	return *this;
@@ -109,4 +109,4 @@ void EightLike::getElements(PositionedData *&array, int &size)const
 	//TODO
 }
 
-}//namespace els
+//}//namespace els

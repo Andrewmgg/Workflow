@@ -2,7 +2,7 @@
 #include "consoleeightlike.h"
 
 using namespace std;
-using namespace esl;
+//using namespace esl;
 
 int main()
 {

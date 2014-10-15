@@ -1,8 +1,8 @@
 #include "eightlike.h"
 
-namespace els{
+//namespace els{
 
-class Implementation
+class EightLike::Implementation
 {
 public:
 	// Great 6
@@ -39,65 +39,65 @@ private:
 	} *head;
 };
 
-Implementation::Implementation()noexcept:
+EightLike::Implementation::Implementation()noexcept:
 	head(nullptr)
 {}
 
-Implementation::Implementation(const Implementation &other):
+EightLike::Implementation::Implementation(const Implementation &other):
 	head(nullptr)
 {
 	//TODO
 }
 
-Implementation::Implementation(Implementation &&other)noexcept:
+EightLike::Implementation::Implementation(Implementation &&other)noexcept:
 	head(nullptr)
 {
 	//TODO
 }
 
-Implementation::Implementation &operator=(const Implementation &other):
+EightLike::Implementation &EightLike::Implementation::operator=(const Implementation &other)
 {
 	//TODO
 	return *this;
 }
 
-Implementation::Implementation &operator=(Implementation &&other)noexcept:
+EightLike::Implementation &EightLike::Implementation::operator=(Implementation &&other)noexcept
 {
 	//TODO
 	return *this;
 }
 
-Implementation::~Implementation() noexcept
+EightLike::Implementation::~Implementation() noexcept
 {
 	//TODO
 }
 
 
-Data Implementation::onHead()const
-{
-	//TODO
-	return 0;
-}
-
-Data Implementation::onNextLeft()const
+Data EightLike::Implementation::onHead()const
 {
 	//TODO
 	return 0;
 }
 
-Data Implementation::onPreviousLeft()const
+Data EightLike::Implementation::onNextLeft()const
 {
 	//TODO
 	return 0;
 }
 
-Data Implementation::onNextRight()const
+Data EightLike::Implementation::onPreviousLeft()const
 {
 	//TODO
 	return 0;
 }
 
-Data Implementation::onPreviousRight()const
+Data EightLike::Implementation::onNextRight()const
+{
+	//TODO
+	return 0;
+}
+
+Data EightLike::Implementation::onPreviousRight()const
 {
 	//TODO
 	return 0;
@@ -105,45 +105,45 @@ Data Implementation::onPreviousRight()const
 
 
 
-void Implementation::pushLeft(Data datum)
+void EightLike::Implementation::pushLeft(Data datum)
 {
 	//TODO
 }
 
-void Implementation::pushRight(Data datum)
+void EightLike::Implementation::pushRight(Data datum)
 {
 	//TODO
 }
 
-void Implementation::popLeft()noexcept
+void EightLike::Implementation::popLeft()noexcept
 {
 	//TODO
 }
 
-void Implementation::popRight()noexcept
+void EightLike::Implementation::popRight()noexcept
 {
 	//TODO
 }
 
-void Implementation::moveForward()noexcept
+void EightLike::Implementation::moveForward()noexcept
 {
 	//TODO
 }
 
-void Implementation::moveBackward()noexcept
+void EightLike::Implementation::moveBackward()noexcept
 {
 	//TODO
 }
 
-void Implementation::clear()noexcept
+void EightLike::Implementation::clear()noexcept
 {
 	//TODO
 }
 
 
-void Implementation::getElements(PositionedData *&array, int &size)const
+void EightLike::Implementation::getElements(PositionedData *&array, int &size)const
 {
 	//TODO
 }
 
-}//namespace els
+//}//namespace els
