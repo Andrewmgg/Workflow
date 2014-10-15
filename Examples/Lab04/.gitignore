@@ -1,0 +1,6 @@
+demo
+bin/
+obj/
+*.o
+*.a
+.directory
