@@ -1,149 +1,209 @@
-#include "eightlike.h"
+#include "implementation.h"
+#include <cassert>
+#include <exception>
+
+using namespace std;
 
 //namespace els{
 
-class EightLike::Implementation
-{
-public:
-	// Great 6
-	Implementation()noexcept;
-	Implementation(const Implementation &other);
-	Implementation(Implementation &&other)noexcept;
-	Implementation &operator=(const Implementation &other);
-	Implementation &operator=(Implementation &&other)noexcept;
-	~Implementation() noexcept;
-
-	//accessors
-	Data onHead()const;
-	Data onNextLeft()const;
-	Data onPreviousLeft()const;
-	Data onNextRight()const;
-	Data onPreviousRight()const;
-
-	//modificators
-	void pushLeft(Data datum);
-	void pushRight(Data datum);
-	void popLeft()noexcept;
-	void popRight()noexcept;
-	void moveForward()noexcept;
-	void moveBackward()noexcept;
-	void clear()noexcept;
-
-	/// return EightLike as linear array, previously left, than head, then right;
-	void getElements(PositionedData *&array, int &size)const;
-private:
-	struct Node
-	{
-		Data datum;
-		Node *next, *previous;
-	} *head;
-};
-
 EightLike::Implementation::Implementation()noexcept:
-	head(nullptr)
+    head(nullptr)
 {}
 
 EightLike::Implementation::Implementation(const Implementation &other):
-	head(nullptr)
+    head(nullptr)
 {
-	//TODO
+    copy(other.head);
 }
 
 EightLike::Implementation::Implementation(Implementation &&other)noexcept:
-	head(nullptr)
+    head(nullptr)
 {
-	//TODO
+    swap(head, other.head);
 }
 
 EightLike::Implementation &EightLike::Implementation::operator=(const Implementation &other)
 {
-	//TODO
-	return *this;
+    if(this != &other)
+    {
+        clear();
+        copy(other.head);
+    }
+    return *this;
 }
 
-EightLike::Implementation &EightLike::Implementation::operator=(Implementation &&other)noexcept
+EightLike::Implementation &EightLike::Implementation::operator=(Implementation && other)noexcept
 {
-	//TODO
-	return *this;
+    swap(head, other.head);
+    return *this;
 }
 
 EightLike::Implementation::~Implementation() noexcept
 {
-	//TODO
+    clear();
 }
 
 
 Data EightLike::Implementation::onHead()const
 {
-	//TODO
-	return 0;
+    if(isEmpty())
+        throw exception();
+    return head->datum;
 }
 
 Data EightLike::Implementation::onNextLeft()const
 {
-	//TODO
-	return 0;
+    if(isEmpty())
+        throw exception();
+    return 0;
 }
 
 Data EightLike::Implementation::onPreviousLeft()const
 {
-	//TODO
-	return 0;
+    if(isEmpty())
+        throw exception();
+    return 0;
 }
 
 Data EightLike::Implementation::onNextRight()const
 {
-	//TODO
-	return 0;
+    if(isEmpty())
+        throw exception();
+    return 0;
 }
 
 Data EightLike::Implementation::onPreviousRight()const
 {
-	//TODO
-	return 0;
+    if(isEmpty())
+        throw exception();
+    return 0;
 }
 
-
+bool EightLike::Implementation::isEmpty()const
+{
+    return head == nullptr;
+}
 
 void EightLike::Implementation::pushLeft(Data datum)
 {
-	//TODO
+    //TODO
 }
 
 void EightLike::Implementation::pushRight(Data datum)
 {
-	//TODO
+    //TODO
 }
 
 void EightLike::Implementation::popLeft()noexcept
 {
-	//TODO
+    //TODO
 }
 
 void EightLike::Implementation::popRight()noexcept
 {
-	//TODO
+    //TODO
 }
 
 void EightLike::Implementation::moveForward()noexcept
 {
-	//TODO
+    //TODO
 }
 
 void EightLike::Implementation::moveBackward()noexcept
 {
-	//TODO
-}
-
-void EightLike::Implementation::clear()noexcept
-{
-	//TODO
+    //TODO
 }
 
 
 void EightLike::Implementation::getElements(PositionedData *&array, int &size)const
 {
-	//TODO
+    //TODO
+}
+
+void EightLike::Implementation::clear()noexcept
+{
+    if(head)
+    {
+        if(head->next != head)
+        {
+            Node *p = head->next;
+
+            while(p != head)
+            {
+                Node *q = p;
+                p = p->next;
+                delete q;
+            }
+        }
+
+        if(head->previous != head)
+        {
+            Node *p = head->previous;
+
+            while(p != head)
+            {
+                Node *q = p;
+                p = p->previous;
+                delete q;
+            }
+        }
+
+        delete head;
+        head = nullptr;
+    }
+}
+
+void copy(const Node *otherHead)
+{
+    if(otherHead)
+    {
+        Node *tempHead = nullptr, *p = nullptr, *q = otherHead;
+        p = new Node(otherHead->datum);
+        tempHead = p;
+        q = q->next;
+        while(q != otherHead)
+        {
+            assert(q);
+            assert(p);
+            Node *r = nullptr;
+            r = new Node(q->datum);
+            p->next = r;
+            r->previous = p;
+            q = q->next;
+            p = p->next;
+        }
+        p->next = tempHead;
+
+        p = tempHead;
+        q = otherHead;
+        q = q->previous;
+        while(q != otherHead)
+        {
+            assert(q);
+            assert(p);
+            Node *r = nullptr;
+            r = new Node(q->datum);
+            p->previous = r;
+            r->next = p;
+            q = q->previous;
+            p = p->previous;
+        }
+        p->previous = tempHead;
+
+        swap(head, tempHead);
+    }
+}
+
+EightLike::Implementation::Node(Data datum):
+    datum(datum),
+    next(nullptr),
+    previous(nullptr)
+{}
+
+EightLike::Implementation::~Node()
+{
+    next = nullptr;
+    previous = nullptr;
 }
 
 //}//namespace els

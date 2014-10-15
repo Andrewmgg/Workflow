@@ -29,6 +29,9 @@ public:
 	Data onNextRight()const;
 	Data onPreviousRight()const;
 
+	//predicates
+	bool isEmpty()const;
+
 	//modificators
 	void pushLeft(Data datum);
 	void pushRight(Data datum);

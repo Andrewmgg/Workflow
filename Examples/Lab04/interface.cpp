@@ -1,4 +1,7 @@
-#include "eightlike.h"
+#include "implementation.h"
+#include <utility>
+
+using namespace std;
 
 //namespace els{
 
@@ -9,104 +12,104 @@ EightLike::EightLike()noexcept:
 EightLike::EightLike(const EightLike &other):
 	pimpl(nullptr)
 {
-	//TODO
+	pimpl = new Implementation(*other.pimpl);
 }
 
 EightLike::EightLike(EightLike &&other)noexcept:
 	pimpl(nullptr)
 {
-	//TODO
+	swap(pimpl, other.pimpl);
 }
 
 EightLike &EightLike::operator=(const EightLike &other)
 {
-	//TODO
+	*pimpl = *other.pimpl;
 	return *this;
 }
 
 EightLike &EightLike::operator=(EightLike &&other)noexcept
 {
-	//TODO
+	*pimpl = *other.pimpl;
 	return *this;
 }
 
 EightLike::~EightLike() noexcept
 {
-	//TODO
+	delete pimpl;
+	pimpl = nullptr;
 }
 
 
 Data EightLike::onHead()const
 {
-	//TODO
-	return 0;
+	return pimpl->onHead();
 }
 
 Data EightLike::onNextLeft()const
 {
-	//TODO
-	return 0;
+	return pimpl->onNextLeft();
 }
 
 Data EightLike::onPreviousLeft()const
 {
-	//TODO
-	return 0;
+	return pimpl->onPreviousLeft();
 }
 
 Data EightLike::onNextRight()const
 {
-	//TODO
-	return 0;
+	return pimpl->onNextRight();
 }
 
 Data EightLike::onPreviousRight()const
 {
-	//TODO
-	return 0;
+	return pimpl->onPreviousRight();
 }
 
 
+bool EightLike::isEmpty()const
+{
+    return pimpl->isEmpty();
+}
 
 void EightLike::pushLeft(Data datum)
 {
-	//TODO
+	pimpl->pushLeft(datum);
 }
 
 void EightLike::pushRight(Data datum)
 {
-	//TODO
+	pimpl->pushRight(datum);
 }
 
 void EightLike::popLeft()noexcept
 {
-	//TODO
+	pimpl->popLeft();
 }
 
 void EightLike::popRight()noexcept
 {
-	//TODO
+	pimpl->popRight();
 }
 
 void EightLike::moveForward()noexcept
 {
-	//TODO
+	pimpl->moveForward();
 }
 
 void EightLike::moveBackward()noexcept
 {
-	//TODO
+	pimpl->moveBackward();
 }
 
 void EightLike::clear()noexcept
 {
-	//TODO
+	pimpl->clear();
 }
 
 
 void EightLike::getElements(PositionedData *&array, int &size)const
 {
-	//TODO
+	pimpl->getElements(array, size);
 }
 
 //}//namespace els
