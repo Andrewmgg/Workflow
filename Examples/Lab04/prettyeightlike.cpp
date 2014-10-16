@@ -28,6 +28,7 @@ PrettyEightLike &PrettyEightLike::operator=(PrettyEightLike && other)noexcept
     return *this;
 }
 
+
 PrettyEightLike::~PrettyEightLike() noexcept
 {}
 
@@ -36,7 +37,8 @@ inline int filter(int value)noexcept
     return value < 0 ? 0 : value;
 }
 
-void PrettyEightLike::printElements(PositionedData *array, int size)const
+void PrettyEightLike::printElements(Position
+edData *array, int size)const
 {
     if(size)
     {
@@ -87,7 +89,9 @@ void PrettyEightLike::printElements(PositionedData *array, int size)const
         for(int i = 0; i < leftPadding + numberOfLeft; ++i)
             cout << " ";
 
+
         cout << array[numberOfLeft].datum << endl;
+
 
         for(int i = 0; i < leftPadding + numberOfLeft; ++i)
             cout << " ";
@@ -96,6 +100,7 @@ void PrettyEightLike::printElements(PositionedData *array, int size)const
 
         for(int i = 0; i < rightPadding; ++i)
             cout << " ";
+
 
         cout << "+";
 
@@ -113,6 +118,7 @@ void PrettyEightLike::printElements(PositionedData *array, int size)const
             cout << " ";
 
         cout << "|" << endl;
+
 
         for(int i = 0; i < rightPadding; ++i)
             cout << " ";

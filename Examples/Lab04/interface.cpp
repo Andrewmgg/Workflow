@@ -32,8 +32,10 @@ EightLike &EightLike::operator=(const EightLike &other)
 EightLike &EightLike::operator=(EightLike && other)noexcept
 {
     *pimpl = *other.pimpl;
+
     return *this;
 }
+
 
 EightLike::~EightLike() noexcept
 {
@@ -96,12 +98,14 @@ void EightLike::popRight()noexcept
 void EightLike::moveForward()noexcept
 {
     pimpl->moveForward();
+
 }
 
 void EightLike::moveBackward()noexcept
 {
     pimpl->moveBackward();
 }
+
 
 void EightLike::clear()noexcept
 {

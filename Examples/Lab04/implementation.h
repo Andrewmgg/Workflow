@@ -40,6 +40,7 @@ private:
 	{
 		Data datum;
 		Node *next, *previous;
+		Node(Data datum);
         ~Node();
 	} *head;
 
