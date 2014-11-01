@@ -38,11 +38,11 @@
 
 [ААП 04](https://github.com/BSU2013gr04Lego/Workflow/releases/download/OOP04/OOPlb04.pdf)
 
-[ААП 05](https://github.com/BSU2013gr04Lego/Workflow/releases/download/polimorphism/Polimorfizm.pdf)
-
 ![Дыаграма класаў для лабраторнай 04](https://raw.githubusercontent.com/BSU2013gr04Lego/Workflow/master/pimplNVI.png)
 
 Клас ASD абстрактная структура дадзеных (у кагосьці гэта стэк, у кагосьці дрэва, у кагосьці, што іншае)
+
+[ААП 05](https://github.com/BSU2013gr04Lego/Workflow/releases/download/polimorphism/Polimorfizm.pdf)
 
 ### Ідэі і заданні для бонусаў
 
