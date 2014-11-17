@@ -2,7 +2,25 @@
 
 ## Барвенаў
 
+BoikaAA_labs
+
+BylinskiAI_labs
+
+DolgopolayaVS_labs
+
+VolcxkovaAJ_labs
+
 ## Лявончык
+
+BelyAS_labs
+
+LebedevaDN_labs
+
+MarchenkoKV_labs
+
+MuhinDA_labs
+
+PavlovecDA_labs
 
 ## Смольская
 
