@@ -4,3 +4,5 @@ obj/
 *.o
 *.a
 .directory
+*.depend
+*.cbp
