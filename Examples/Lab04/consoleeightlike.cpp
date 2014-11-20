@@ -1,5 +1,6 @@
 #include "consoleeightlike.h"
 #include <iostream>
+#include <utility>
 
 using namespace std;
 
@@ -18,15 +19,17 @@ ConsoleEightLike::ConsoleEightLike(ConsoleEightLike &&other)noexcept:
 EightLike(other)
 {}
 
-ConsoleEightLike &ConsoleEightLike::operator=(const ConsoleEightLike &other)
+/*ConsoleEightLike &ConsoleEightLike::operator=(const ConsoleEightLike &other)
 {
+    ConsoleEightLike temp(other);
+    swap(*this,temp);
     return *this;
 }
 
 ConsoleEightLike &ConsoleEightLike::operator=(ConsoleEightLike && other)noexcept
 {
     return *this;
-}
+}*/
 
 ConsoleEightLike::~ConsoleEightLike() noexcept
 {}

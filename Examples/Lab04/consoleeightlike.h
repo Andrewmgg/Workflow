@@ -13,8 +13,8 @@ public:
 	ConsoleEightLike()noexcept;
 	ConsoleEightLike(const ConsoleEightLike &other);
 	ConsoleEightLike(ConsoleEightLike &&other)noexcept;
-	ConsoleEightLike &operator=(const ConsoleEightLike &other);
-	ConsoleEightLike &operator=(ConsoleEightLike &&other)noexcept;
+	ConsoleEightLike &operator=(const ConsoleEightLike &other)=default;
+	ConsoleEightLike &operator=(ConsoleEightLike &&other)noexcept=default;
 	virtual ~ConsoleEightLike() noexcept;
 
 	//interface
