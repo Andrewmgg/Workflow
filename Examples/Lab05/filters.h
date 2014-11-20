@@ -31,7 +31,7 @@ class Oscilator: public AbstractFilter
 public:
     // TODO Great VI
 
-    void recive()override;
+    void recive(double input)override;
     double transmit()const override;
     bool mayBroadcast()const override;
 
