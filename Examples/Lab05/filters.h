@@ -101,7 +101,8 @@ public:
     bool mayBroadcast()const override;
 private:
     double *bufer;
-    int size, count, position, place;
+    int size, count, position;
+    const int place;
     bool ready;
 };
 
