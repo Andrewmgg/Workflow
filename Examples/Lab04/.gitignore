@@ -6,3 +6,4 @@ obj/
 .directory
 *.depend
 *.cbp
+*.layout*
