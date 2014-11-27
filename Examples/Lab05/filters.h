@@ -29,17 +29,23 @@ private:
 class Oscilator: public AbstractFilter
 {
 public:
-    // TODO Great VI
+    // Great VI
+    Oscilator(double omega, double beta, double dt);
+    Oscilator(const Oscilator &) = delete;
+    Oscilator &operator =(const Oscilator &) = delete;
+    Oscilator(Oscilator &&) = delete;
+    Oscilator &operator=(Oscilator && ) = delete;
+    ~Oscilator() {}
+    // /Great VI
 
     void recive(double input)override;
     double transmit()const override;
     bool mayBroadcast()const override;
 
 private:
-    double omega, beta;
+    double omega, beta, dt;
     double currentValue, previousValue;
-    bool ready;
-
+    double currentVelocity, previousVelocity;
 };
 
 class Loop: public AbstractFilter
@@ -104,6 +110,19 @@ private:
     int size, count, position;
     const int place;
     bool ready;
+};
+
+class FileEmiter:public AbstractFilter
+{
+public:
+    // Great VI
+    FileEmiter(const char *filename);
+    FileEmiter(const FileEmiter &other);
+    FileEmiter &operator=(const FileEmiter &other);
+    FileEmiter(FileEmiter &&other);
+    FileEmiter &operator=(FileEmiter &&other);
+    ~FileEmiter();
+    // /Great VI
 };
 
 
