@@ -75,10 +75,10 @@ class Sumator: public AbstractFilter
 public:
     // Great VI
     Sumator(int size);
-    Sumator(const Sumator &other)=delete;
-    Sumator &operator=(const Sumator &other)=delete;
-    Sumator(Sumator &&other)=delete;
-    Sumator &operator=(Sumator &&other)=delete;
+    Sumator(const Sumator &other) = delete;
+    Sumator &operator=(const Sumator &other) = delete;
+    Sumator(Sumator &&other) = delete;
+    Sumator &operator=(Sumator && other) = delete;
     ~Sumator();
     // /Great VI
 
@@ -94,11 +94,11 @@ class Percintilizer: public AbstractFilter
 {
 public:
     // Great VI
-    Percintilizer(int size, double ratio=0.5);
-    Percintilizer(const Percintilizer &other)=delete;
-    Percintilizer &operator=(const Percintilizer &other)=delete;
-    Percintilizer(Percintilizer &&other)=delete;
-    Percintilizer &operator=(Percintilizer &&other)=delete;
+    Percintilizer(int size, double ratio = 0.5);
+    Percintilizer(const Percintilizer &other) = delete;
+    Percintilizer &operator=(const Percintilizer &other) = delete;
+    Percintilizer(Percintilizer &&other) = delete;
+    Percintilizer &operator=(Percintilizer && other) = delete;
     ~Percintilizer();
     // /Great VI
 
@@ -112,19 +112,48 @@ private:
     bool ready;
 };
 
-class FileEmiter:public AbstractFilter
+class FileEmiter: public AbstractFilter
 {
 public:
     // Great VI
     FileEmiter(const char *filename);
-    FileEmiter(const FileEmiter &other);
-    FileEmiter &operator=(const FileEmiter &other);
-    FileEmiter(FileEmiter &&other);
-    FileEmiter &operator=(FileEmiter &&other);
+    FileEmiter(const FileEmiter &other) = delete;
+    FileEmiter &operator=(const FileEmiter &other) = delete;
+    FileEmiter(FileEmiter &&other) = delete;
+    FileEmiter &operator=(FileEmiter && other) = delete;
     ~FileEmiter();
     // /Great VI
+
+    void recive(double input)override;
+    double transmit()const override;
+    bool mayBroadcast()const override;
+private:
+    class FileEmiterImplementation;
+    FileEmiterImplementation *pimpl;
 };
 
+class FileReciver: public AbstractFilter
+{
+public:
+    // Great VI
+    FileReciver(const char *filename);
+    FileReciver(const FileReciver &other) = delete;
+    FileReciver &operator=(const FileReciver &other) = delete;
+    FileReciver(FileReciver &&other) = delete;
+    FileReciver &operator=(FileReciver && other) = delete;
+    ~FileReciver();
+    // /Great VI
+
+    void recive(double input)override;
+    double transmit()const override;
+    bool mayBroadcast()const override
+    {
+        return false;
+    }
+private:
+    class FileReciverImplementation;
+    FileReciverImplementation *pimpl;
+};
 
 
 }

@@ -16,11 +16,27 @@ class FileEmiterCantReadException: public exception
     }
 };
 
-class FileEmiterCantCreateException
+class FileEmiterCantCreateException: public exception
 {
     const char *what() const noexcept override
     {
         return "FileEmiter can't create";
+    }
+};
+
+class FileReciverCantReadException: public exception
+{
+    const char *what() const noexcept override
+    {
+        return "FileReciver can't never read";
+    }
+};
+
+class FileReciverCantCreateException: public exception
+{
+    const char *what() const noexcept override
+    {
+        return "FileReciver can't create";
     }
 };
 
@@ -33,7 +49,8 @@ public:
         value(0.0),
         ready(false)
     {
-        //TODO if can't open throw
+        if(!fin.is_open())
+            throw FileEmiterCantCreateException();
     }
 
     FileEmiterImplementation(const FileEmiterImplementation &other) = delete;
@@ -46,7 +63,7 @@ public:
     }
     // /Great VI
 
-    double transmit()const
+    double transmit()
     {
         if(!ready)
             throw FileEmiterCantReadException();
@@ -54,13 +71,13 @@ public:
         return value;
     }
 
-    bool mayBroadcast()const
+    bool mayBroadcast()
     {
         if(!ready)
         {
             char str[256];
             fin.getline(str, 256);
-            if(regex_match(str, regex("[-+]?([1-9]\\d*|0)(\\.\\d+)?([eE][-+]?\\d+)?")))
+            if(!fin.eof() && regex_match(str, regex("[-+]?([1-9]\\d*|0)(\\.\\d+)?([eE][-+]?\\d+)?")))
             {
                 value = strtod(str, nullptr);
                 ready = true;
@@ -68,6 +85,7 @@ public:
         }
         return ready;
     }
+
 private:
     ifstream fin;
     double value;
@@ -86,7 +104,7 @@ FileEmiter::~FileEmiter()
     pimpl = nullptr;
 }
 
-void FileEmiter::recive(double input)
+void FileEmiter::recive(double )
 {}
 
 double FileEmiter::transmit() const
@@ -99,5 +117,59 @@ bool FileEmiter::mayBroadcast() const
     return pimpl->mayBroadcast();
 }
 
+class FileReciver::FileReciverImplementation
+{
+public:
+    // Great VI
+    FileReciverImplementation(const char *filename):
+        fout(filename)
+    {
+        if(!fout.is_open())
+            throw FileReciverCantCreateException();
+    }
+
+    FileReciverImplementation(const FileReciverImplementation &other) = delete;
+    FileReciverImplementation &operator=(const FileReciverImplementation &other) = delete;
+    FileReciverImplementation(FileReciverImplementation &&other) = delete;
+    FileReciverImplementation &operator=(FileReciverImplementation && other) = delete;
+
+    ~FileReciverImplementation()
+    {
+        fout.close();
+    }
+
+    // /Great VI
+
+    void recive(double input)
+    {
+        fout.precision(15);
+        fout << input << endl;
+    }
+
+private:
+    ofstream fout;
+};
+
+FileReciver::FileReciver(const char *filename):
+    pimpl(nullptr)
+{
+    pimpl = new FileReciverImplementation(filename);
+}
+
+FileReciver::~FileReciver()
+{
+    delete pimpl;
+    pimpl = nullptr;
+}
+
+void FileReciver::recive(double input)
+{
+    pimpl->recive(input);
+}
+
+double FileReciver::transmit() const
+{
+    throw FileReciverCantReadException();
+}
 
 }
