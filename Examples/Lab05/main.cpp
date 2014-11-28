@@ -62,12 +62,8 @@ public:
 
     void clear()
     {
-        while(begin)
-        {
-            AbstractFilter *p = begin;
-            begin = begin->next();
-            delete p;
-        }
+        delete begin;
+        begin = nullptr;
         end = nullptr;
     }
 
@@ -121,6 +117,7 @@ int main()
 
         while(chain.canWork())
             chain.processSample();
+        cout << "work done\n";
     }
     catch(exception &e)
     {
@@ -136,11 +133,11 @@ int main()
 
 void printMenu()
 {
-    cout<<"Please, select next filter:\n\n";
-    cout<<"1.\tAverage per 50 samples.\n";
-    cout<<"2.\tMedian per 11 samples.\n";
-    cout<<"3.\tLoop resonator base on 50 samples\n";
-    cout<<"4.\tHarmonic oscilator with 50 samples in period\n";
-    cout<<"0.\tFinish.\n";
+    cout << "\n\n\nPlease, select next filter:\n\n";
+    cout << "1.\tAverage per 50 samples.\n";
+    cout << "2.\tMedian per 11 samples.\n";
+    cout << "3.\tLoop resonator base on 50 samples\n";
+    cout << "4.\tHarmonic oscilator with 50 samples in period\n";
+    cout << "0.\tNothing.\n";
 }
 
