@@ -44,8 +44,8 @@ double Loop::transmit() const
     for(auto i = 0; i < size; ++i)
     {
         resonator[i] = 0.0;
-        for(auto j = 0; j < size; ++j)
-            resonator[i] += bufer[i + j * size];
+        for(auto j = 0; j < multiplicity; ++j)
+            resonator[i] += bufer[i + j * size] / multiplicity;
     }
 
     double result = 0.0;

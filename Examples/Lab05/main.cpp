@@ -102,6 +102,7 @@ int main()
                 break;
             case 3:
                 chain.addFilter(new Loop(50, 5));
+                chain.addFilter(new Multiplyer(1.0 / 50.0));
                 break;
             case 4:
                 chain.addFilter(new Oscilator(20.0, 2.0, 0.01));
