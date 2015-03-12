@@ -36,6 +36,6 @@
 
 ## Заданні
 
-(Lab01)[https://github.com/BSU2013gr04Lego/Workflow/releases/download/editpolimorph/JavaLab1.pdf]
+[Lab01](https://github.com/BSU2013gr04Lego/Workflow/releases/download/editpolimorph/JavaLab1.pdf)
 
-(Lab02)[https://github.com/BSU2013gr04Lego/Workflow/releases/download/editpolimorph/Polimorfizm.pdf]
+[Lab02](https://github.com/BSU2013gr04Lego/Workflow/releases/download/editpolimorph/Polimorfizm.pdf)
