@@ -41,3 +41,5 @@
 [Lab02](https://github.com/BSU2013gr04Lego/Workflow/releases/download/editpolimorph/Polimorfizm.pdf)
 
 [Lab03](https://github.com/BSU2013gr04Lego/Workflow/releases/download/lab03.pdf/JavaLab3.pdf)
+
+[Lab0506](https://github.com/BSU2013gr04Lego/Workflow/releases/download/lab0506.pdf/JavaLab56.pdf)
